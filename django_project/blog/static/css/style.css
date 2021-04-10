@@ -1,0 +1,106 @@
+@charset "UTF-8";
+body {
+  font-family: 'NanumSquare', sans-serif !important;
+  background-color: black;
+}
+body, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+ol, ul {
+	list-style: none;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+.header-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  line-height: 50px;
+	/* background-color: rgba(0,0,0,0.5); */
+}
+.link {
+  margin-left: 20px;
+	color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+.content-link, .link:hover {
+	font-weight: bold;
+	color: gold;
+}
+.content-link:hover {
+	color: yellow;
+}
+.step-link {
+	font-weight: bold;
+	color: darkgoldenrod;
+}
+.step-link:hover {
+	color: sienna;
+}
+.global-width {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+.graphic-item {
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: 0.5s;
+	will-change: opacity;
+}
+.visible {
+	opacity: 1;
+}
+.scroll-graphic {
+	overflow-x: hidden;
+	position: sticky;
+	top: 0;
+	height: 100vh;
+}
+.scroll-text {
+	position: relative;
+	padding-bottom: 1px;
+  font-weight: bolder;
+  text-align: center;
+}
+.scene-height {
+	max-height: 100vh;
+}
+.step {
+	margin-bottom: 60vh;
+	padding: 0.5rem 1rem;
+	border-radius: 10px;
+	background: rgba(255,255,255,0.8);
+	/* box-shadow: rgba(0,0,0,0.25) 0 0 3px; */
+}
+.small-text {
+  font-size: 4px;
+}
+.color-text {
+	color: mediumslateblue;
+}
+
+.normal-content {
+  padding: 50px;
+  color: white;
+  line-height: 1.5;
+  text-align: center;
+}
