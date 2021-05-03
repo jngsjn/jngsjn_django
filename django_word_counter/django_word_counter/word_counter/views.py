@@ -24,5 +24,5 @@ def result(request):
   response = {
     'word_counts': word_counts_list
   }
-
+  
   return render(request, 'result.html', response)

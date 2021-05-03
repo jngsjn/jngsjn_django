@@ -3,3 +3,27 @@ body {
   font-family: 'NanumSquare', sans-serif !important;
   text-align: center;
 }
+h1 {
+  font-style: italic;
+  font-weight: 800;
+}
+p {
+  line-height: 24px;
+}
+textarea {
+  border-radius: 5px;
+  border-color: slategrey;
+  resize: none;
+  font-family: 'NanumSquare', sans-serif !important;
+}
+.submit-button {
+  margin-top: 20px;
+  width: 200px;
+  height: 50px;
+  font-weight: bold;
+  color: white;
+  background-color: mediumslateblue;
+  border: 0;
+  border-radius: 25px;
+  cursor: pointer;
+}
