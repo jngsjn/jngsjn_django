@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Counter</title>
+  <link rel="stylesheet" href="{% static 'css/common.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+</head>
+<body>
+  <h1>Word Counter</h1>
+  <hr>
+  <form action="{% url 'result' %}" method="POST">
+    {% csrf_token %} 
+    <!-- POST일 떄 토큰 꼭 넣을 것 -->
+    <textarea rows="10" cols="50" name="sentence"></textarea><br>
+    <input type="submit">
+  </form>
+</body>
+</html>
