@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block container %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,14 +9,34 @@
   <title>글 수정하기</title>
 </head>
 <body>
-  <h1>글 수정하기</h1>
-  <form action="{%url 'update' blog.id%}" method="post">
-    {%csrf_token%}
-    <h3>제목: <input type="text" name="title" value= "{{blog.title}}"></h3>
-    <p>작성자: <input type="text" name="writer" value= "{{blog.writer}}"></p>
-    <p>본문: <textarea name="body" cols="40" rows="10">{{blog.body}}</textarea></p>
-    <p>사진: <input type="file" name="image" id="image"></p>
-    <button type="submit">제출하기</button>
-  </form>
+  {% include "nav.html" %}
+  <div class="wrapper">
+    <h1>글 수정하기</h1>
+    <form action="{%url 'update' blog.id%}" method="post" enctype="multipart/form-data">
+      {%csrf_token%}
+      <div class="row mb-3">
+        <label for="inputTitle" class="col-sm-2 col-form-label">제목</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputTitle" name="title" value= "{{blog.title}}">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <label for="inputWriter" class="col-sm-2 col-form-label">작성자</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputWriter" name="writer" value= "{{blog.writer}}">
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="textareaBody" class="form-label">본문</label>
+        <textarea class="form-control" id="textareaBody" name="body" cols="40" rows="10">{{blog.body}}</textarea>
+      </div>
+      <div class="mb-3">
+        <label for="formFile" class="form-label">이미지 첨부하기</label>
+        <input class="form-control" type="file" id="formFile" name="image">
+      </div>
+      <button type="submit" class="btn btn-primary">제출하기</button>
+    </form>
+  </div>
 </body>
 </html>
+{% endblock %}

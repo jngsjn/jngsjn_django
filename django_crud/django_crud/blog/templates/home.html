@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block container %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
@@ -8,21 +10,31 @@
   <title>Blog</title>
 </head>
 <body>
-  <h1>Blog</h1>
-  <img src="{% static 'music.jpg' %}" alt="" width="200">
-  <a href="{%url 'new' %}">새 글 작성하기</a>
-  <div>
+  <img src="{% static 'city.jpeg' %}" class="img-fluid" alt="">
+  {% include "nav.html" %}
+  <div class="wrapper">
+  <h1>Posts</h1>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     {% for blog in blogs%}
-      <a href="{%url 'detail' blog.id%}">
-        <h3>{{blog.title}}</h3>
-      </a>
-      <p>{{blog.writer}}</p>
-      <time>{{blog.pub_date}}</time>
-      <p>{{blog.summary}}</p>
-      {% if blog.image %}
-      <p><img src="{{blog.image.url}}" alt=""></p>
-      {% endif %}
+    <div class="col">
+      <div class="card h-100">
+        {% if blog.image %}
+          <img src="{{blog.image.url}}" class="card-img-top" alt="">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{blog.title}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{blog.writer}}</h6>
+          <p class="card-text">{{blog.summary}}...</p>
+          <a href="{%url 'detail' blog.id%}" class="btn btn-primary">detail</a>
+        </div>
+        <div class="card-footer">
+          <time class="text-muted">{{blog.pub_date}}</time>
+        </div>
+        
+      </div>
+    </div>
     {% endfor %}
   </div>
 </body>
 </html>
+{% endblock %}
