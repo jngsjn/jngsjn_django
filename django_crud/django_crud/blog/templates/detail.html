@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자세히 보기</title>
+</head>
+<body>
+  <h1>{{blog.title}}</h1>
+  <p>{{blog.writer}}</p>
+  <time>{{blog.pub_date}}</time>
+  <p>{{blog.body}}</p>
+  {% if blog.image %}
+  <p>
+    <img src="{{blog.image.url}}" alt="" width="200">
+  </p>
+  {% endif %}
+  </div>
+  <a href="{% url 'edit' blog.id %}">수정하기</a>
+  <a href="{% url 'delete' blog.id %}">삭제하기</a>
+  <a href="{% url 'home' %}">메인으로</a>
+</body>
+</html>
